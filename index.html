@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>THE OTHER YOU</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com crossorigin">
+        <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+        <body>
+            <section id="startScreen" class="screen">
+            <div class="title-shadow">
+            <div class="shadow-head"></div>
+            <div class="shadow-body"></div>
+           <div class="shadow-arm left-arm"></div>
+           <div class="shadow-arm right-arm"></div>
+       </div>
+            <h1 class="main-title">
+            
+                <span class="other">THE OTHER</span> 
+                <span class="you">YOU</span>
+            </h1>
+            <p class="start-subtitle">SOME DOORS SHOULD STAY CLOSED</p>
+            <button id="startButton" type="button">START GAME</button>
+            <p id="warningText">ARE YOU SURE YOU ARE ALONE?</p>
+            </section>
+            <section id="instructionsScreen" class="screen hidden">
+                <h1 class="instructions-title">HOW TO PLAY</h1>
+                <h2>YOUR OBJECTIVE</h2>
+                <p>Use the arrow keys, WASD or NumPad keys (8, 4, 6, 2) to move arround.</p>
+                <p>Explore your surroundings and discover hidden clues..</p>
+                <div class="control-buttons">
+                    <div class="control-row">
+                        <button class="control-btn" type="button" disabled>&#8593;</button>
+                        <button class="control-btn" type="button" disabled>&#8592;</button>
+                        <button class="control-btn" type="button" disabled>&#8595;</button>
+                        <button class="control-btn" type="button" disabled>&#8594;</button>
+                        
+                    </div>
+
+                </div>
+                <button id="continueButton" type="button">CONTINUE</button>
+                <p>Stay alert. Something feels strangely familiar.</p>
+            </section>
+            <section id="gameScreen" class="screen hidden">
+            <h2 class="house-title">"YOU WERE NEVER ALONE"</h2>
+            <div class="scene">
+                <div id="lightning"></div>
+                <div class="fog fog-one"></div>
+                <div class="fog fog-two"></div>
+                <div class="forest" aria-hidden="true">
+                 <div class="forest-tree tree-one"></div>
+                 <div class="forest-tree tree-two"></div>
+                <div class="forest-tree tree-three"></div>
+                <div class="forest-tree tree-four"></div>
+                <div class="forest-tree tree-five"></div>
+                <div class="forest-tree tree-six"></div>
+                <div class="forest-tree tree-seven"></div>
+                <div class="forest-tree tree-eight"></div>
+                 <div class="forest-leaves" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                 <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+                 <span></span><span></span><span></span><span></span><span></span>
+                 <span></span><span></span><span></span><span></span><span></span>
+                 <span></span><span></span><span></span><span></span><span></span>
+            </div>
+                <div class="forest-fog" aria-hidden="true">
+               <span></span>
+               <span></span>
+               <span></span>
+                </div>
+
+<div class="forest-ground-shadow" aria-hidden="true"></div>
+                <div class="haunted-moon"></div>
+                <div class="bush bush-one"></div>
+                <div class="bush bush-two"></div>
+                <div class="bush bush-three"></div>
+                <div class="rock rock-one"></div>
+                <div class="rock rock-two"></div>
+                
+               </div> 
+               <div id="player" aria-label="Player character">
+                <div class="player-head"></div>
+                <div class="player-body"></div>
+                <div class="player-arm left-arm"></div>
+                <div class="player-arm right-arm"></div>
+                <div class="player-leg left-leg"></div>
+                <div class="player-leg right-leg"></div>
+                
+               </div>
+         
+                <div class="house">
+                    <div class="roof"></div>
+                    <div class="wall-crack crack-one"></div>
+                    <div class="wall-crack crack-two"></div>
+                    <div class="broken-wall broken-wall-one"></div>
+                   <div class="broken-wall broken-wall-two"></div>
+
+               <div class="old-bricks">
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+                   <span></span>
+               </div>
+                    <div class="floor third-floor">
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                    </div>
+                    <div class="floor second-floor">
+                        <div class="window"></div>
+                        <div class="window"></div>
+                        <div class="window"></div>
+                    </div>
+                    <div class="floor third-floor">
+                        <button id="door" class="door" type="button" aria-lable="Click the haunted house door">
+                            <span class="door-knob"></span>
+                        </button>
+                        <div class="window"></div>
+                    </div>
+                    <div class="shadow">
+                        <div class="shadow-head"></div>
+                        <div class="shadow-body"></div>
+                    </div>
+                </div>
+                <div id="message" aria-live="polite">Click the door to begin...</div>
+                </div>
+                <div id="insideHouse" class="inside-house hidden">
+
+    <div class="house-atmosphere"></div>
+
+    <div class="inside-heading">
+        <h2>WELCOME BACK</h2>
+        <p>YOU WERE NEVER ALONE...</p>
+    </div>
+
+    <div class="haunted-corridor">
+        <svg class="corner-spider-web web-left" viewBox="0 0 100 100"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <g stroke="rgba(220,220,220,0.65)"
+       stroke-width="0.7"
+       fill="none">
+
+        
+        <path d="M0 0 L100 0
+                 M0 0 L0 100
+                 M0 0 L25 100
+                 M0 0 L50 100
+                 M0 0 L75 100
+                 M0 0 L100 100
+                 M0 0 L100 25
+                 M0 0 L100 50
+                 M0 0 L100 75"/>
+
+       </g>
+        
+<g stroke="rgba(220,220,220,0.5)"
+   stroke-width="0.6"
+   fill="none">
+
+    <path d="M8 0 Q8 8 0 8"/>
+    <path d="M18 0 Q18 18 0 18"/>
+    <path d="M30 0 Q30 30 0 30"/>
+    <path d="M42 0 Q42 42 0 42"/>
+    <path d="M54 0 Q54 54 0 54"/>
+    <path d="M66 0 Q66 66 0 66"/>
+    <path d="M78 0 Q78 78 0 78"/>
+    <path d="M90 0 Q90 90 0 90"/>
+
+</g>
+
+   
+</svg>
+
+
+<svg class="corner-spider-web web-right"
+     viewBox="0 0 100 100"
+     xmlns="http://www.w3.org/2000/svg">
+
+    <g stroke="rgba(220,220,220,0.65)"
+       stroke-width="0.7"
+       fill="none">
+
+        <path d="M0 0 L100 0
+                 M0 0 L0 100
+                 M0 0 L25 100
+                 M0 0 L50 100
+                 M0 0 L75 100
+                 M0 0 L100 100
+                 M0 0 L100 25
+                 M0 0 L100 50
+                 M0 0 L100 75"/>
+                 </g>
+<g stroke="rgba(220,220,220,0.5)"
+   stroke-width="0.6"
+   fill="none">
+
+    <path d="M8 0 Q8 8 0 8"/>
+    <path d="M18 0 Q18 18 0 18"/>
+    <path d="M30 0 Q30 30 0 30"/>
+    <path d="M42 0 Q42 42 0 42"/>
+    <path d="M54 0 Q54 54 0 54"/>
+    <path d="M66 0 Q66 66 0 66"/>
+    <path d="M78 0 Q78 78 0 78"/>
+    <path d="M90 0 Q90 90 0 90"/>
+
+
+    </g>
+</svg>
+
+        <div class="corridor-wall left-wall"></div>
+        <div class="corridor-wall right-wall"></div>
+
+        <div class="broken-wallpaper"></div>
+
+        <div class="ceiling-light"></div>
+
+        <div class="corridor-floor"></div>
+        <div id="insidePlayer" class="inside-player">
+    <div class="player-head"></div>
+    <div class="player-body"></div>
+    <div class="player-arm left-arm"></div>
+    <div class="player-arm right-arm"></div>
+    <div class="player-leg left-leg"></div>
+    <div class="player-leg right-leg"></div>
+    
+</div>
+<div id="otherYou" class="other-you hidden">
+    <div class="other-you-head"></div>
+    <div class="other-you-body"></div>
+    <div class="other-you-eyes"></div>
+</div>
+
+        <div id="cluePhoto" class="clue-photo">
+    <div class="photo-frame">
+        <div class="photo-person"></div>
+    </div>
+    </div>
+    <p id="photoHint" class="hidden">CLICK THE FRAME</p>
+
+   </div>
+
+<div id="clueLetter" class="clue-letter hidden">
+    <div class="letter-paper">
+        <div class="letter-mark">✉</div>
+        <div class="letter-lines"></div>
+    </div>
+</div>
+
+<p id="letterHint" class="letter-hint hidden">CLICK THE LETTER</p>
+<div id="clueMirror" class="clue-letter hidden">
+    <div class="letter-paper">
+        <div class="letter-mark">◉</div>
+        <div class="letter-lines"></div>
+    </div>
+</div>
+
+
+<p id="mirrorHint" class="letter-hint hidden">CLICK THE MIRROR</p>
+
+
+        <div class="inside-door">
+            <div class="door-crack"></div>
+            <div class="door-handle"></div>
+            <div class="door-shadow"></div>
+            
+        </div>
+
+       
+
+
+        <div class="inside-shadow"></div>
+
+    </div>
+
+<div class="inside-story">
+    <p class="hidden">THE DOOR CLOSES BEHIND YOU.</p>
+    <p class="footsteps hidden">YOU HEAR FOOTSTEPS ABOVE YOU...</p>
+    <p class="inside-warning hidden">DON'T LOOK BACK.</p>
+    <p id="storyMessage" class="hidden"></p>
+</div>
+
+<div id="missionIntro" class="mission-intro hidden">
+    <h2>YOU ARE TRAPPED</h2>
+
+    <p>The door closes behind you.</p>
+    <p>This house is hiding a dark secret.</p>
+
+    <h3>YOUR MISSION</h3>
+
+    <p>* EXPLORE THE HOUSE</p>
+    <p>* FIND AND EXAMINE THE CLUES</p>
+    <p>* DISCOVER THE TRUTH ABOUT YOUR OTHER SELF</p>
+
+    <p class="mission-warning">
+       * SOMETHING IS WATCHING YOU...
+    </p>
+
+    <button id="exploreButton" type="button">
+        START EXPLORING
+    </button>
+</div>
+
+</div>
+            </section>
+            <audio id="windSound" src="sounds/wind.mp3" loop preload="auto"></audio>
+            <audio id="vocalSound" src="sounds/vocal.mp3" loop preload="auto"></audio>
+            <audio id="scarySound" src="sounds/scary.mp3" loop preload="auto"></audio>
+        
+<section id="endingScreen" class="screen hidden">
+    <h1 class="ending-title">THE END?</h1>
+
+    <p id="endingMessage">
+        YOU THOUGHT YOU WERE ALONE...
+    </p>
+
+    <button id="restartButton" type="button">
+        PLAY AGAIN
+    </button>
+</section>
+            <script src="game.js"></script>
+                
+            
+        </body>
+    
+</html>
